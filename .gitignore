@@ -4,6 +4,10 @@
 /[Bb]uild/
 /[Bb]uilds/
 /Assets/AssetStoreTools*
+Library/
+Temp/
+Obj/
+UnityGenerated/
 
 # Visual Studio 2015 cache directory
 /.vs/
@@ -32,3 +36,15 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+#OS Generated
+.DS_Store*
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+[Tt]humbs.db
+[Dd]esktop.ini
+Corridor/Library/ShaderCache/
+Corridor/Library/metadata/
