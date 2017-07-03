@@ -100,6 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.5
+  jumpSpeed: 4
+  fireball: {fileID: 1014133259345072, guid: e1b50eacdeb9ba44ab5200de5b53aa5f, type: 2}
 --- !u!212 &212524281316563864
 SpriteRenderer:
   m_ObjectHideFlags: 1

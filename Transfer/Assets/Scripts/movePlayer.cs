@@ -7,6 +7,8 @@ public class movePlayer : MonoBehaviour {
 	public float speed = 3f;
 	//public Vector2 vecSpeed = new Vector2(-3,0);
 	public float jumpSpeed = 10f;
+
+	public GameObject fireball;
 	
 	// Use this for initialization
 	void Start () {
@@ -14,8 +16,8 @@ public class movePlayer : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		if (Input.GetKey(KeyCode.LeftArrow))
+	void FixedUpdate () {
+		 if (Input.GetKey(KeyCode.LeftArrow))
          {
              transform.position += Vector3.left * speed * Time.deltaTime;
 			 //GetComponent<Rigidbody2D>().MovePosition(GetComponent<Rigidbody2D>().position + vecSpeed * Time.deltaTime); //Vector based speed
@@ -33,5 +35,9 @@ public class movePlayer : MonoBehaviour {
          {
              transform.position += Vector3.down * speed * Time.deltaTime;
          }
+		 if(Input.GetKeyDown(KeyCode.Space))
+		 {
+			Instantiate(fireball, transform.position - new Vector3(1.5f,0,0), transform.rotation);
+		 }
 	}
 }
