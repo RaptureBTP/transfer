@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class movePlayer : MonoBehaviour {
 
-	public float speed = 1.5f;
+	public float speed = 3f;
 	//public Vector2 vecSpeed = new Vector2(-3,0);
 	public float jumpSpeed = 10f;
 	
