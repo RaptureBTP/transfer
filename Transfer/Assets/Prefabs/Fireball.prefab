@@ -100,6 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  SpaceTransfer: {fileID: 1837487057061176, guid: 446c117b36324b34ca19b98a6e59c7d8,
+    type: 2}
 --- !u!212 &212138145732692976
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -129,8 +131,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 2099556763
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7cd3ec62891562c408e86d424866d354, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
