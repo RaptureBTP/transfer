@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4627269660785274}
   - component: {fileID: 212130029863753432}
   - component: {fileID: 61290729677673230}
+  - component: {fileID: 114102154910729932}
   m_Layer: 0
   m_Name: tempDoor
   m_TagString: Untagged
@@ -66,6 +67,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7.203087, y: 3.8179235}
   m_EdgeRadius: 0
+--- !u!114 &114102154910729932
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1936708321993286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e01dbe28c86e5c4c88d03e9b8f7f693, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212130029863753432
 SpriteRenderer:
   m_ObjectHideFlags: 1
