@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class lightRoom : MonoBehaviour {
 
-	//public GameObject blackoutSpace;
-	public float minimumDistance = 10;
+	public GameObject blackoutSpace;
+	public float minimumDistance = 5;
 	GameObject[] roomBlackouts;
 	//public GameObject blackoutSpaceExit;
 
@@ -20,10 +20,25 @@ public class lightRoom : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
-		System.Console.WriteLine("Collided");
+		Debug.Log("Collided");
+		Debug.Log(movePlayer.currentRoom);
+		FindBlackouts();
+
 		if(other.tag == "Player")
 		{
-			System.Console.WriteLine("Collided with player");
+			// GameObject playerObj = other.transform.parent.gameObject;
+			// playerObj.GetComponent<
+			Debug.Log("Collided with player");
+
+			if(movePlayer.currentRoom == 2.1f){
+				Instantiate(blackoutSpace, new Vector3(4.3f, -0.07f, 0), transform.rotation);
+			}
+			else if(movePlayer.currentRoom == 2.2f)
+			{
+				Instantiate(blackoutSpace, new Vector3(4.3f,9.13f,0), transform.rotation);
+			}
+			
+
 			for (int i = 0; i < roomBlackouts.Length; ++i)
 			{
 				if(roomBlackouts[i] != null){
@@ -33,7 +48,14 @@ public class lightRoom : MonoBehaviour {
 					}
 				}
 			}
-     
+
+			if(movePlayer.currentRoom == 2.1f)
+				movePlayer.currentRoom = 2.2f;
+			else
+				movePlayer.currentRoom = 2.1f;
+
+			//if(other.collider2D.GetComponent<>())
+
 			//Instantiate(blackoutSpace,,); //instantiate 
 		}
 	}

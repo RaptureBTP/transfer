@@ -8,6 +8,8 @@ public class movePlayer : MonoBehaviour {
 	//public Vector2 vecSpeed = new Vector2(-3,0);
 	public float jumpSpeed = 10f;
 
+	public static float currentRoom = 2.1f;
+
 	public GameObject fireball;
 	
 	// Use this for initialization
