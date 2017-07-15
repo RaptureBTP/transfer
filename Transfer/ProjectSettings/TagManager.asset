@@ -6,6 +6,7 @@ TagManager:
   tags:
   - transferable
   - hiddenRoomOverlay
+  - terrain
   layers:
   - Default
   - TransparentFX

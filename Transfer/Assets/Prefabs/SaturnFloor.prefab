@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 61984549432583508}
   m_Layer: 0
   m_Name: SaturnFloor
-  m_TagString: Untagged
+  m_TagString: terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

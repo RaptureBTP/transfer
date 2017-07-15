@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 126b0c6d372f81b4a9f1824f31524add, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.5
+  speed: 2.82
   jumpSpeed: 4
   fireball: {fileID: 1014133259345072, guid: e1b50eacdeb9ba44ab5200de5b53aa5f, type: 2}
 --- !u!212 &212524281316563864

@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114102154910729932}
   m_Layer: 0
   m_Name: tempDoor
-  m_TagString: Untagged
+  m_TagString: terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78,6 +78,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e01dbe28c86e5c4c88d03e9b8f7f693, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blackoutSpace: {fileID: 0}
+  minimumDistance: 5
 --- !u!212 &212130029863753432
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -6,6 +6,7 @@ public class lightRoom : MonoBehaviour {
 
 	public GameObject blackoutSpace;
 	public float minimumDistance = 5;
+	private bool triggerWait = false;
 	GameObject[] roomBlackouts;
 	//public GameObject blackoutSpaceExit;
 
@@ -30,37 +31,49 @@ public class lightRoom : MonoBehaviour {
 			// playerObj.GetComponent<
 			Debug.Log("Collided with player");
 
-			if(movePlayer.currentRoom == 2.1f){
-				Instantiate(blackoutSpace, new Vector3(4.3f, -0.07f, 0), transform.rotation);
-			}
-			else if(movePlayer.currentRoom == 2.2f)
-			{
-				Instantiate(blackoutSpace, new Vector3(4.3f,9.13f,0), transform.rotation);
-			}
-			
+			if(triggerWait == false)
+			{	
+				//triggerWait = true;
+				if(movePlayer.currentRoom == 2.1f){
+					Instantiate(blackoutSpace, new Vector3(4.3f, -0.07f, 0), transform.rotation);
+				}
+				else if(movePlayer.currentRoom == 2.2f)
+				{
+					Instantiate(blackoutSpace, new Vector3(4.3f,9.13f,0), transform.rotation);
+				}
+				
 
-			for (int i = 0; i < roomBlackouts.Length; ++i)
-			{
-				if(roomBlackouts[i] != null){
-					if(Vector3.Distance(transform.position, roomBlackouts[i].transform.position) <= minimumDistance)
-					{
-							Destroy(roomBlackouts[i]);
+				for (int i = 0; i < roomBlackouts.Length; ++i)
+				{
+					if(roomBlackouts[i] != null){
+						if(Vector3.Distance(transform.position, roomBlackouts[i].transform.position) <= minimumDistance)
+						{
+								Destroy(roomBlackouts[i]);
+						}
 					}
 				}
+
+				if(movePlayer.currentRoom == 2.1f)
+					movePlayer.currentRoom = 2.2f;
+				else
+					movePlayer.currentRoom = 2.1f;
+
+				//if(other.collider2D.GetComponent<>())
+
+				//Instantiate(blackoutSpace,,); //instantiate 
+				// StartCoroutine(DoorCooldown());
 			}
-
-			if(movePlayer.currentRoom == 2.1f)
-				movePlayer.currentRoom = 2.2f;
-			else
-				movePlayer.currentRoom = 2.1f;
-
-			//if(other.collider2D.GetComponent<>())
-
-			//Instantiate(blackoutSpace,,); //instantiate 
 		}
 	}
 
 	void FindBlackouts(){
 		roomBlackouts = GameObject.FindGameObjectsWithTag("hiddenRoomOverlay");
 	}
+
+	// IEnumerator DoorCooldown()
+	// {
+	// 	yield return new WaitForSecondsRealtime(1);
+	// 	triggerWait = false;
+	// }
+
 }

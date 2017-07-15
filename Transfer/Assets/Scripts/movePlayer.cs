@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class movePlayer : MonoBehaviour {
 
-	public float speed = 5f;
+	public float speed = 2.82f;
 	//public Vector2 vecSpeed = new Vector2(-3,0);
-	public float jumpSpeed = 10f;
+	public float jumpSpeed = 4f;
 
 	public static float currentRoom = 2.1f;
+
+	private bool grounded = true;
 
 	public GameObject fireball;
 	
@@ -30,8 +32,11 @@ public class movePlayer : MonoBehaviour {
          }
          if (Input.GetKeyDown(KeyCode.UpArrow))
          {
-             //transform.position += Vector3.up * jumpSpeed * Time.deltaTime; //non-force-based jumping
-			 GetComponent<Rigidbody2D>().AddForce(new Vector2(0,8), ForceMode2D.Impulse);
+			if(grounded == true)
+			{
+				//transform.position += Vector3.up * jumpSpeed * Time.deltaTime; //non-force-based jumping
+				GetComponent<Rigidbody2D>().AddForce(new Vector2(0,8), ForceMode2D.Impulse);
+			}
          }
          if (Input.GetKey(KeyCode.DownArrow))
          {
@@ -46,4 +51,22 @@ public class movePlayer : MonoBehaviour {
 			 Application.Quit();
 		 }
 	}
+
+	void OnCollisionEnter2D(Collision2D hit)
+	{
+    	if (hit.gameObject.tag=="terrain")
+		{
+			Debug.Log("Hit ground");
+        	grounded=true;
+		}
+	}
+	void OnCollisionExit2D(Collision2D hit)
+	{
+		if (hit.gameObject.tag=="terrain")
+		{
+			Debug.Log("Off ground");
+			grounded=false;
+		}
+	}
+
 }
