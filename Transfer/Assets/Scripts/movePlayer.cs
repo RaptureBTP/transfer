@@ -41,5 +41,9 @@ public class movePlayer : MonoBehaviour {
 		 {
 			Instantiate(fireball, transform.position - new Vector3(1.5f,0,0), transform.rotation);
 		 }
+		 if(Input.GetKeyDown(KeyCode.Escape))
+		 {
+			 Application.Quit();
+		 }
 	}
 }
