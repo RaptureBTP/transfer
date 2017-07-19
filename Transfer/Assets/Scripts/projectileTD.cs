@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class projectile : MonoBehaviour {
+public class projectileTD : MonoBehaviour {
 
 	private float speed = 6f;
 
@@ -12,7 +12,8 @@ public class projectile : MonoBehaviour {
 	void Start () 
 	{
 		//SpaceTransfer = GameObject.Find("SpaceTransfer");
-		direction = GameObject.FindGameObjectWithTag("player").GetComponent<movePlayer>().lastDir;
+		direction = GameObject.FindGameObjectWithTag("Player").GetComponent<movePlayerTD>().lastDir;
+        Debug.Log(direction);
 	}
 	
 	// Update is called once per frame
@@ -32,13 +33,13 @@ public class projectile : MonoBehaviour {
 		}
 		else if(col.gameObject.tag == "transferable")
 		{
+            Destroy(col.gameObject);
 			if(col.gameObject.name == "Heart")
 			{
-				//SpaceTransfer.GetComponent<SpriteRenderer>().enabled = true;
-				Instantiate(SpaceTransfer, new Vector3(-13.04f,0.06f,0), transform.rotation);
+				Instantiate(SpaceTransfer, new Vector3(-5.04f,-1f,0), transform.rotation);
 			}
-			Destroy(col.gameObject);
 			DestroyObject(gameObject);
 		}
+        GameObject.FindGameObjectWithTag("Player").GetComponent<movePlayerTD>().transferReady = true;
 	}
 }

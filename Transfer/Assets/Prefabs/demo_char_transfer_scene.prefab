@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 61590515452203354}
   - component: {fileID: 114453845545301706}
   - component: {fileID: 114675735752208128}
+  - component: {fileID: 114736436695414722}
   m_Layer: 0
   m_Name: demo_char_transfer_scene
   m_TagString: Player
@@ -96,13 +97,14 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1560714182476994}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 126b0c6d372f81b4a9f1824f31524add, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2.82
   jumpSpeed: 4
+  lastDir: left
   fireball: {fileID: 1014133259345072, guid: e1b50eacdeb9ba44ab5200de5b53aa5f, type: 2}
 --- !u!114 &114453845545301706
 MonoBehaviour:
@@ -130,6 +132,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blackoutScreen: {fileID: 1418698871349694, guid: 81360b744fb851e40a0e8d1a80cea29e,
     type: 2}
+--- !u!114 &114736436695414722
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1560714182476994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e3f8d82c8c00c84a88ad9876c6bc7a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2.82
+  jumpSpeed: 4
+  lastDir: left
+  fireball: {fileID: 1159645162001662, guid: 51849dd7aa7eed24ca1ab9111fac8b81, type: 2}
 --- !u!212 &212524374177993776
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -160,7 +177,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2099556763
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4e159a47abaacc44399a6784ef79c4de, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
