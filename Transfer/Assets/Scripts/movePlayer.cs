@@ -12,6 +12,8 @@ public class movePlayer : MonoBehaviour {
 
 	private bool grounded = true;
 
+	public string lastDir = "left";
+
 	public GameObject fireball;
 	
 	// Use this for initialization
@@ -24,11 +26,13 @@ public class movePlayer : MonoBehaviour {
 		 if (Input.GetKey(KeyCode.LeftArrow))
          {
              transform.position += Vector3.left * speed * Time.deltaTime;
+			 lastDir = "left";
 			 //GetComponent<Rigidbody2D>().MovePosition(GetComponent<Rigidbody2D>().position + vecSpeed * Time.deltaTime); //Vector based speed
          }
          if (Input.GetKey(KeyCode.RightArrow))
          {
              transform.position += Vector3.right * speed * Time.deltaTime;
+			 lastDir = "right";
          }
          if (Input.GetKeyDown(KeyCode.UpArrow))
          {
@@ -44,7 +48,10 @@ public class movePlayer : MonoBehaviour {
          }
 		 if(Input.GetKeyDown(KeyCode.Space))
 		 {
-			Instantiate(fireball, transform.position - new Vector3(1.5f,0,0), transform.rotation);
+			if(lastDir == "left")
+				Instantiate(fireball, transform.position - new Vector3(1.5f,0,0), transform.rotation);
+			else if(lastDir == "right")
+				Instantiate(fireball, transform.position + new Vector3(1.5f,0,0), transform.rotation);
 		 }
 		 if(Input.GetKeyDown(KeyCode.Escape))
 		 {

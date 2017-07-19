@@ -4,23 +4,33 @@ using UnityEngine;
 
 public class projectile : MonoBehaviour {
 
-	public float speed = 3f;
+	private float speed = 6f;
+
+	private string direction;
 	public GameObject SpaceTransfer;
 	// Use this for initialization
 	void Start () 
 	{
 		//SpaceTransfer = GameObject.Find("SpaceTransfer");
+		direction = GameObject.FindGameObjectWithTag("Player").GetComponent<movePlayer>().lastDir;
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		transform.position += Vector3.left * speed * Time.deltaTime;
+		if(direction == "left")
+			transform.position += Vector3.left * speed * Time.deltaTime;
+		else if(direction == "right")
+			transform.position += Vector3.right * speed * Time.deltaTime;
 	}
 	
 	void OnTriggerEnter2D(Collider2D col)
 	{
-		if(col.gameObject.tag == "transferable")
+		if(col.gameObject.tag == "terrain")
+		{
+			DestroyObject(gameObject);
+		}
+		else if(col.gameObject.tag == "transferable")
 		{
 			if(col.gameObject.name == "Heart")
 			{
