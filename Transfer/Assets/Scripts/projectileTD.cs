@@ -8,6 +8,7 @@ public class projectileTD : MonoBehaviour {
 
 	private string direction;
 	public GameObject SpaceTransfer;
+	public GameObject HeartWall;
 	// Use this for initialization
 	void Start () 
 	{
@@ -36,7 +37,11 @@ public class projectileTD : MonoBehaviour {
             Destroy(col.gameObject);
 			if(col.gameObject.name == "Heart")
 			{
-				Instantiate(SpaceTransfer, new Vector3(-5.04f,-1f,0), transform.rotation);
+				//Debug.Log(GameObject.Find("Wall-Heart-TD"));
+				Destroy(GameObject.Find("Wall-Heart-TD"));
+				//SpaceTransfer.GetComponent<SpriteRenderer>().enabled = true;
+				Instantiate(SpaceTransfer, new Vector3(-5.04f,-1.8f,0), transform.rotation);
+				Instantiate(HeartWall, new Vector3(-3.79f, 3.4f, -1.24f), Quaternion.Euler (0,0,270));
 			}
 			DestroyObject(gameObject);
 		}
