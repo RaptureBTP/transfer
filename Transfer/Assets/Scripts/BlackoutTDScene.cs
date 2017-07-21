@@ -9,7 +9,7 @@ public class BlackoutTDScene : MonoBehaviour {
 	public GameObject blackoutScreen;
 	void Start () {
 		//blackouts[0]
-		Instantiate(blackoutScreen, new Vector3(-10.3f,0,0), transform.rotation);
+		Instantiate(blackoutScreen, new Vector3(-10.94f,1.32f,0), transform.rotation);
 	}
 	
 	// Update is called once per frame
