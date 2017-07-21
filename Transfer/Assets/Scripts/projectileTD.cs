@@ -14,7 +14,7 @@ public class projectileTD : MonoBehaviour {
 	{
 		//SpaceTransfer = GameObject.Find("SpaceTransfer");
 		direction = GameObject.FindGameObjectWithTag("Player").GetComponent<movePlayerTD>().lastDir;
-        Debug.Log(direction);
+        //Debug.Log(direction);
 	}
 	
 	// Update is called once per frame

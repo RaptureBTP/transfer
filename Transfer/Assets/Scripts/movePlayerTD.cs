@@ -5,6 +5,7 @@ using UnityEngine;
 public class movePlayerTD : MonoBehaviour {
 
 	public float speed = 2.82f;
+	//public Vector2 vecSpeed = new Vector2(-3,0);
 	public float jumpSpeed = 4f;
 
 	public static float currentRoom = 2.1f;
@@ -29,6 +30,7 @@ public class movePlayerTD : MonoBehaviour {
              transform.position += Vector3.left * speed * Time.deltaTime;
 			 lastDir = "left";
              //Debug.Log("Player moved " + lastDir + " last");
+			 //GetComponent<Rigidbody2D>().MovePosition(GetComponent<Rigidbody2D>().position + vecSpeed * Time.deltaTime); //Vector based speed
          }
          if (Input.GetKey(KeyCode.RightArrow))
          {
