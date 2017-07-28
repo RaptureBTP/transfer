@@ -5,6 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ProtoMovementScene.unity
     guid: f3b5c47b8759caa4d925d953c3e4f7e0
+  - enabled: 1
+    path: Assets/Scenes/ElderDialScene.unity
+    guid: bec0c2e16dd42514585cf8299e696372
