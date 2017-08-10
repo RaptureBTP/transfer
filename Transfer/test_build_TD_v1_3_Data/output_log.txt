@@ -1,0 +1,61 @@
+Initialize engine version: 5.6.2f1 (a2913c821e27)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 960 (ID=0x1401)
+    Vendor:   NVIDIA
+    VRAM:     3072 MB
+    Driver:   22.21.13.8476
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Brady\Documents\GitRepos\transfer\Transfer\test_build_TD_v1_3_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Brady\Documents\GitRepos\transfer\Transfer\test_build_TD_v1_3_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Brady\Documents\GitRepos\transfer\Transfer\test_build_TD_v1_3_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Brady\Documents\GitRepos\transfer\Transfer\test_build_TD_v1_3_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Brady\Documents\GitRepos\transfer\Transfer\test_build_TD_v1_3_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Brady\Documents\GitRepos\transfer\Transfer\test_build_TD_v1_3_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Brady\Documents\GitRepos\transfer\Transfer\test_build_TD_v1_3_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Brady\Documents\GitRepos\transfer\Transfer\test_build_TD_v1_3_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.050 seconds
+Platform assembly: C:\Users\Brady\Documents\GitRepos\transfer\Transfer\test_build_TD_v1_3_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Brady\Documents\GitRepos\transfer\Transfer\test_build_TD_v1_3_Data\Managed\System.dll (this message is harmless)
+<RI> Initializing input.
+<RI> Input initialized.
+desktop: 1920x1080 60Hz; virtual: 3360x1080 at -1440,0
+<RI> Initialized touch support.
+UnloadTime: 1.329760 ms
+Heart
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Platform-broken(Clone)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Platform-broken(Clone)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Platform-broken(Clone)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Platform-broken(Clone)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Platform-broken(Clone)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Platform-broken(Clone)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+SaturnPlatform
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting up 3 worker threads for Enlighten.
+  Thread -> id: 2fd8 -> priority: 1 
+  Thread -> id: d6c -> priority: 1 
+  Thread -> id: 2b58 -> priority: 1 

@@ -28,7 +28,8 @@ public class projectileTD : MonoBehaviour {
 	
 	void OnTriggerEnter2D(Collider2D col)
 	{
-		if(col.gameObject.tag == "terrain")
+		Debug.Log(col.gameObject.name);
+		if(col.gameObject.tag == "terrain" || col.gameObject.tag == "platform")
 		{
 			DestroyObject(gameObject);
 		}
@@ -45,6 +46,7 @@ public class projectileTD : MonoBehaviour {
 			}
 			DestroyObject(gameObject);
 		}
-        GameObject.FindGameObjectWithTag("Player").GetComponent<movePlayerTD>().transferReady = true;
+		if(col.gameObject.tag != "background")
+        	GameObject.FindGameObjectWithTag("Player").GetComponent<movePlayerTD>().transferReady = true;
 	}
 }

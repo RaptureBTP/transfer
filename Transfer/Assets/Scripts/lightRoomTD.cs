@@ -22,23 +22,23 @@ public class lightRoomTD : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other){
 		//Debug.Log("Collided");
-		Debug.Log(movePlayer.currentRoom);
+		//Debug.Log(movePlayer.currentRoom);
 		FindBlackouts();
 
 		if(other.tag == "Player")
 		{
-			Debug.Log("Collided with player");
+			//Debug.Log("Collided with player");
 
 			if(triggerWait == false)
 			{	
 				//triggerWait = true;
 				if(movePlayer.currentRoom == 1.1f){
-                    Debug.Log("Created new blackout in room 2.1");
+                    //Debug.Log("Created new blackout in room 2.1");
 					Instantiate(blackoutSpace, new Vector3(-10.94f, 1.32f, 0), transform.rotation);
 				}
 				else if(movePlayer.currentRoom == 2.1f)
 				{
-                    Debug.Log("Created new blackout in room 1.1");
+                    //Debug.Log("Created new blackout in room 1.1");
 					Instantiate(blackoutSpace, new Vector3(3.357267f, 1.351677f, 0), transform.rotation);
 				}
 				
@@ -46,7 +46,7 @@ public class lightRoomTD : MonoBehaviour {
 				for (int i = 0; i < roomBlackouts.Length; ++i)
 				{
 					if(roomBlackouts[i] != null){
-                        Debug.Log("Distance from " + roomBlackouts[i] + " and collider is " + Vector3.Distance(transform.position, roomBlackouts[i].transform.position));
+                        //Debug.Log("Distance from " + roomBlackouts[i] + " and collider is " + Vector3.Distance(transform.position, roomBlackouts[i].transform.position));
 						if(Vector3.Distance(transform.position, roomBlackouts[i].transform.position) <= minimumDistance)
 						{
 								Destroy(roomBlackouts[i]);

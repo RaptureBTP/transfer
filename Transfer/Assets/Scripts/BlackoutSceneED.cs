@@ -10,6 +10,7 @@ public class BlackoutSceneED : MonoBehaviour {
 	void Start () {
 		//blackouts[0]
 		Instantiate(blackoutScreen, new Vector3(-0.98f,-2.84f,0), transform.rotation);
+        
 	}
 	
 	// Update is called once per frame

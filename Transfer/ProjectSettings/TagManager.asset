@@ -8,6 +8,8 @@ TagManager:
   - hiddenRoomOverlay
   - terrain
   - dial
+  - platform
+  - background
   layers:
   - Default
   - TransparentFX

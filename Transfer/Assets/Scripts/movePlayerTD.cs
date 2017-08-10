@@ -44,6 +44,7 @@ public class movePlayerTD : MonoBehaviour {
 			{
 				//transform.position += Vector3.up * jumpSpeed * Time.deltaTime; //non-force-based jumping
 				GetComponent<Rigidbody2D>().AddForce(new Vector2(0,8), ForceMode2D.Impulse);
+				grounded = false;
 			}
          }
          if (Input.GetKey(KeyCode.DownArrow))
@@ -52,6 +53,7 @@ public class movePlayerTD : MonoBehaviour {
          }
 		 if(Input.GetKey(KeyCode.Space))
 		 {
+			 //Debug.Log(transferReady);
             if(transferReady == true)
             {
                 transferReady = false;
@@ -69,19 +71,19 @@ public class movePlayerTD : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D hit)
 	{
-    	if (hit.gameObject.tag=="terrain")
+    	if (hit.gameObject.tag=="platform")
 		{
-			Debug.Log("Hit ground");
+			//Debug.Log("Hit ground");
         	grounded=true;
 		}
 	}
-	void OnCollisionExit2D(Collision2D hit)
-	{
-		if (hit.gameObject.tag=="terrain")
-		{
-			Debug.Log("Off ground");
-			grounded=false;
-		}
-	}
+	// void OnCollisionExit2D(Collision2D hit)
+	// {
+	// 	if (hit.gameObject.tag=="platform")
+	// 	{
+	// 		Debug.Log("Off ground");
+	// 		grounded=false;
+	// 	}
+	// }
 
 }
