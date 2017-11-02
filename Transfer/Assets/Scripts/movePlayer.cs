@@ -39,7 +39,7 @@ public class movePlayer : MonoBehaviour {
 			if(grounded == true)
 			{
 				//transform.position += Vector3.up * jumpSpeed * Time.deltaTime; //non-force-based jumping
-				GetComponent<Rigidbody2D>().AddForce(new Vector2(0,8), ForceMode2D.Impulse);
+				GetComponent<Rigidbody2D>().AddForce(new Vector2(0,jumpSpeed), ForceMode2D.Impulse);
 			}
          }
          if (Input.GetKey(KeyCode.DownArrow))
