@@ -1,8 +1,8 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class movePlayer : MonoBehaviour {
+public class movePlayerClassic : MonoBehaviour {
 
 	public float speed = 2.82f;
 	//public Vector2 vecSpeed = new Vector2(-3,0);
@@ -15,9 +15,7 @@ public class movePlayer : MonoBehaviour {
 	public string lastDir = "left";
 
 	public GameObject fireball;
-
-	public bool transferReady = true;
-
+	
 	// Use this for initialization
 	void Start () {
 		
@@ -42,7 +40,6 @@ public class movePlayer : MonoBehaviour {
 			{
 				//transform.position += Vector3.up * jumpSpeed * Time.deltaTime; //non-force-based jumping
 				GetComponent<Rigidbody2D>().AddForce(new Vector2(0,jumpSpeed), ForceMode2D.Impulse);
-				grounded = false;
 			}
          }
          if (Input.GetKey(KeyCode.DownArrow))
@@ -51,14 +48,10 @@ public class movePlayer : MonoBehaviour {
          }
 		 if(Input.GetKeyDown(KeyCode.Space))
 		 {
-			if(transferReady == true)
-            {
-                transferReady = false;
-                if(lastDir == "left")
-                    Instantiate(fireball, transform.position - new Vector3(1.5f,0,0), transform.rotation);
-                else if(lastDir == "right")
-                    Instantiate(fireball, transform.position + new Vector3(1.5f,0,0), transform.rotation);
-            }
+			if(lastDir == "left")
+				Instantiate(fireball, transform.position - new Vector3(1.5f,0,0), transform.rotation);
+			else if(lastDir == "right")
+				Instantiate(fireball, transform.position + new Vector3(1.5f,0,0), transform.rotation);
 		 }
 		 if(Input.GetKeyDown(KeyCode.Escape))
 		 {
@@ -68,7 +61,7 @@ public class movePlayer : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D hit)
 	{
-    	if (hit.gameObject.tag=="terrain" || hit.gameObject.tag=="platform")
+    	if (hit.gameObject.tag=="terrain")
 		{
 			Debug.Log("Hit ground");
         	grounded=true;
@@ -76,7 +69,7 @@ public class movePlayer : MonoBehaviour {
 	}
 	void OnCollisionExit2D(Collision2D hit)
 	{
-		if (hit.gameObject.tag=="terrain" || hit.gameObject.tag=="platform")
+		if (hit.gameObject.tag=="terrain")
 		{
 			Debug.Log("Off ground");
 			grounded=false;

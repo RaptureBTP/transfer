@@ -8,11 +8,13 @@ public class projectile : MonoBehaviour {
 
 	private string direction;
 	public GameObject SpaceTransfer;
+	//public GameObject HeartWall;
 	// Use this for initialization
 	void Start () 
 	{
 		//SpaceTransfer = GameObject.Find("SpaceTransfer");
-		direction = GameObject.FindGameObjectWithTag("player").GetComponent<movePlayer>().lastDir;
+		direction = GameObject.FindGameObjectWithTag("Player").GetComponent<movePlayer>().lastDir;
+        //Debug.Log(direction);
 	}
 	
 	// Update is called once per frame
@@ -26,19 +28,28 @@ public class projectile : MonoBehaviour {
 	
 	void OnTriggerEnter2D(Collider2D col)
 	{
-		if(col.gameObject.tag == "terrain")
+		Debug.Log(col.gameObject.name);
+		if(col.gameObject.tag == "terrain" || col.gameObject.tag == "platform")
 		{
 			DestroyObject(gameObject);
 		}
 		else if(col.gameObject.tag == "transferable")
 		{
-			if(col.gameObject.name == "Heart")
-			{
-				//SpaceTransfer.GetComponent<SpriteRenderer>().enabled = true;
-				Instantiate(SpaceTransfer, new Vector3(-13.04f,0.06f,0), transform.rotation);
-			}
-			Destroy(col.gameObject);
+			Instantiate(SpaceTransfer, col.transform.position, transform.rotation);
+            Destroy(col.gameObject);
+			// if(col.gameObject.name == "Heart")
+			// {
+			// 	//Debug.Log(GameObject.Find("Wall-Heart-TD"));
+			// 	//Destroy(GameObject.Find("Wall-Heart-TD"));
+			// 	//SpaceTransfer.GetComponent<SpriteRenderer>().enabled = true;
+			// 	//col.Collider2D.transform.position;
+			// 	Instantiate(SpaceTransfer, col.transform.position, transform.rotation);
+			// 	//Instantiate(SpaceTransfer, new Vector3(-5.04f,-1.8f,0), transform.rotation);
+			// 	//Instantiate(HeartWall, new Vector3(-3.79f, 3.4f, -1.24f), Quaternion.Euler (0,0,270));
+			// }
 			DestroyObject(gameObject);
 		}
+		if(col.gameObject.tag != "background")
+        	GameObject.FindGameObjectWithTag("Player").GetComponent<movePlayer>().transferReady = true;
 	}
 }
