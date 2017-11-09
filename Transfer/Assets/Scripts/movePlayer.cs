@@ -73,6 +73,11 @@ public class movePlayer : MonoBehaviour {
 			Debug.Log("Hit ground");
         	grounded=true;
 		}
+		else if (hit.gameObject.tag=="collapse"){
+			Debug.Log("Hit collapse collider");
+			StartCoroutine(TimeToWait(hit.transform.parent.gameObject));
+			//Destroy(hit.transform.parent.gameObject);
+		}
 	}
 	void OnCollisionExit2D(Collision2D hit)
 	{
@@ -81,6 +86,14 @@ public class movePlayer : MonoBehaviour {
 			Debug.Log("Off ground");
 			grounded=false;
 		}
+	}
+
+	IEnumerator TimeToWait(GameObject parentObject)
+	{
+		Debug.Log("In TimeToWait");
+		yield return new WaitForSeconds(3);
+		Destroy(parentObject);
+		Debug.Log("Waiting is done");
 	}
 
 }

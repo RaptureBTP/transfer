@@ -10,6 +10,7 @@ TagManager:
   - dial
   - platform
   - background
+  - collapse
   layers:
   - Default
   - TransparentFX
