@@ -12,9 +12,11 @@ public class movePlayer : MonoBehaviour {
 
 	private bool grounded = true;
 
-	public string lastDir = "left";
+	public string lastDir = "left"; //last direction the player was facing
 
 	public GameObject fireball;
+
+	public BoxCollider2D ownBoxCollider;
 
 	public bool transferReady = true;
 
@@ -70,11 +72,11 @@ public class movePlayer : MonoBehaviour {
 	{
     	if (hit.gameObject.tag=="terrain" || hit.gameObject.tag=="platform")
 		{
-			Debug.Log("Hit ground");
+			//Debug.Log("Hit ground");
         	grounded=true;
 		}
 		else if (hit.gameObject.tag=="collapse"){
-			Debug.Log("Hit collapse collider");
+			//Debug.Log("Hit collapse collider");
 			StartCoroutine(TimeToWait(hit.transform.parent.gameObject));
 			//Destroy(hit.transform.parent.gameObject);
 		}
@@ -83,17 +85,28 @@ public class movePlayer : MonoBehaviour {
 	{
 		if (hit.gameObject.tag=="terrain" || hit.gameObject.tag=="platform")
 		{
-			Debug.Log("Off ground");
+			//Debug.Log("Off ground");
 			grounded=false;
 		}
 	}
 
+	void OnTriggerEnter2D(Collider2D triggeredCollider)
+	{
+		if(triggeredCollider.name == "Two Way Platform Trigger")
+			ownBoxCollider.isTrigger = true;
+	}
+
+	void OnTriggerExit2D(Collider2D triggeredCollider)
+	{
+		if(triggeredCollider.name == "Two Way Platform Trigger")
+			ownBoxCollider.isTrigger = false;
+	}
 	IEnumerator TimeToWait(GameObject parentObject)
 	{
-		Debug.Log("In TimeToWait");
+		//Debug.Log("In TimeToWait");
 		yield return new WaitForSeconds(3);
 		Destroy(parentObject);
-		Debug.Log("Waiting is done");
+		//Debug.Log("Waiting is done");
 	}
 
 }
