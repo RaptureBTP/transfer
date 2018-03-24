@@ -354,6 +354,14 @@ Prefab:
       propertyPath: m_Name
       value: BlackSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 1418698871349694, guid: 81360b744fb851e40a0e8d1a80cea29e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1418698871349694, guid: 81360b744fb851e40a0e8d1a80cea29e, type: 2}
+      propertyPath: m_TagString
+      value: hiddenRoomOverlay
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 81360b744fb851e40a0e8d1a80cea29e, type: 2}
   m_IsPrefabParent: 0
@@ -1037,6 +1045,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2.82
+  jumpSpeed: 0
   lastDir: left
   fireball: {fileID: 1014133259345072, guid: e1b50eacdeb9ba44ab5200de5b53aa5f, type: 2}
   ownBoxCollider: {fileID: 1666180915}
