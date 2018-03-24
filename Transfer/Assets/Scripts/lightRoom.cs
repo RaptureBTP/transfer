@@ -6,7 +6,7 @@ public class lightRoom : MonoBehaviour {
 
 	public GameObject blackoutSpace;
 	public float minimumDistance = 5;
-	private bool triggerWait = false;
+	//private bool triggerWait = false;
 	GameObject[] roomBlackouts;
 	//public GameObject blackoutSpaceExit;
 
@@ -21,7 +21,7 @@ public class lightRoom : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
-		Debug.Log("Collided");
+		Debug.Log("Collided between rooms");
 		Debug.Log(movePlayer.currentRoom);
 		FindBlackouts();
 
@@ -31,8 +31,8 @@ public class lightRoom : MonoBehaviour {
 			// playerObj.GetComponent<
 			Debug.Log("Collided with player");
 
-			if(triggerWait == false)
-			{	
+			//if(triggerWait == false)
+			//{	
 				//triggerWait = true;
 				if(movePlayer.currentRoom == 2.1f){
 					Instantiate(blackoutSpace, new Vector3(4.3f, -0.07f, 0), transform.rotation);
@@ -62,7 +62,7 @@ public class lightRoom : MonoBehaviour {
 
 				//Instantiate(blackoutSpace,,); //instantiate 
 				// StartCoroutine(DoorCooldown());
-			}
+			//}
 		}
 	}
 
