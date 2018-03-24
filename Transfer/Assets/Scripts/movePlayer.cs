@@ -6,7 +6,7 @@ public class movePlayer : MonoBehaviour {
 
 	public float speed = 2.82f;
 	//public Vector2 vecSpeed = new Vector2(-3,0);
-	public float jumpSpeed = 8f;
+	private float jumpSpeed = 8f;
 
 	public static float currentRoom = 2.1f;
 
