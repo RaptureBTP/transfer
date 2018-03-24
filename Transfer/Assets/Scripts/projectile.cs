@@ -31,12 +31,14 @@ public class projectile : MonoBehaviour {
 		Debug.Log(col.gameObject.name);
 		if(col.gameObject.tag == "terrain" || col.gameObject.tag == "platform")
 		{
-			DestroyObject(gameObject);
+			//DestroyObject(gameObject);
+			Object.Destroy(gameObject);
 		}
 		else if(col.gameObject.tag == "transferable")
 		{
 			Instantiate(SpaceTransfer, col.transform.position, transform.rotation);
-            Destroy(col.gameObject);
+            //Destroy(col.gameObject);
+			Object.Destroy(col.gameObject);
 			// if(col.gameObject.name == "Heart")
 			// {
 			// 	//Debug.Log(GameObject.Find("Wall-Heart-TD"));
@@ -47,7 +49,8 @@ public class projectile : MonoBehaviour {
 			// 	//Instantiate(SpaceTransfer, new Vector3(-5.04f,-1.8f,0), transform.rotation);
 			// 	//Instantiate(HeartWall, new Vector3(-3.79f, 3.4f, -1.24f), Quaternion.Euler (0,0,270));
 			// }
-			DestroyObject(gameObject);
+			//DestroyObject(gameObject);
+			Object.Destroy(gameObject);
 		}
 		if(col.gameObject.tag != "background")
         	GameObject.FindGameObjectWithTag("Player").GetComponent<movePlayer>().transferReady = true;
