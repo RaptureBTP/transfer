@@ -27,18 +27,7 @@ public class movePlayer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		 if (Input.GetKey(KeyCode.LeftArrow))
-         {
-             transform.position += Vector3.left * speed * Time.deltaTime;
-			 lastDir = "left";
-			 //GetComponent<Rigidbody2D>().MovePosition(GetComponent<Rigidbody2D>().position + vecSpeed * Time.deltaTime); //Vector based speed
-         }
-         if (Input.GetKey(KeyCode.RightArrow))
-         {
-             transform.position += Vector3.right * speed * Time.deltaTime;
-			 lastDir = "right";
-         }
-         if (Input.GetKeyDown(KeyCode.UpArrow))
+		 if (Input.GetKeyDown(KeyCode.UpArrow))
          {
 			if(grounded == true)
 			{
@@ -49,11 +38,22 @@ public class movePlayer : MonoBehaviour {
 				Debug.Log("Grounded is now false");
 			}
          }
-         if (Input.GetKey(KeyCode.DownArrow))
+		 else if (Input.GetKey(KeyCode.LeftArrow))
+         {
+             transform.position += Vector3.left * speed * Time.deltaTime;
+			 lastDir = "left";
+			 //GetComponent<Rigidbody2D>().MovePosition(GetComponent<Rigidbody2D>().position + vecSpeed * Time.deltaTime); //Vector based speed
+         }
+         else if (Input.GetKey(KeyCode.RightArrow))
+         {
+             transform.position += Vector3.right * speed * Time.deltaTime;
+			 lastDir = "right";
+         }
+/*          if (Input.GetKey(KeyCode.DownArrow))
          {
              transform.position += Vector3.down * speed * Time.deltaTime;
-         }
-		 if(Input.GetKeyDown(KeyCode.Space))
+         } */
+		 else if(Input.GetKeyDown(KeyCode.Space))
 		 {
 			if(transferReady == true)
             {
@@ -64,7 +64,7 @@ public class movePlayer : MonoBehaviour {
                     Instantiate(fireball, transform.position + new Vector3(1.5f,0,0), transform.rotation);
             }
 		 }
-		 if(Input.GetKeyDown(KeyCode.Escape))
+		 else if(Input.GetKeyDown(KeyCode.Escape))
 		 {
 			 Application.Quit();
 		 }
@@ -73,10 +73,11 @@ public class movePlayer : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D hit)
 	{
     	//if (hit.gameObject.tag=="terrain" || hit.gameObject.tag=="platform")
-		if (hit.gameObject.tag=="platform")
+		if (hit.gameObject.tag=="platform" && grounded==false)
 		{
-			Debug.Log("Hit ground");
+			//Debug.Log("Hit ground");
         	grounded=true;
+			Debug.Log("Grounded is now true.");
 		}
 		else if (hit.gameObject.tag=="collapse"){
 			//Debug.Log("Hit collapse collider");
