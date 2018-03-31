@@ -42,9 +42,11 @@ public class movePlayer : MonoBehaviour {
          {
 			if(grounded == true)
 			{
+				Debug.Log("Grounded is true. Up Arrow pressed. Jumping now.");
 				//transform.position += Vector3.up * jumpSpeed * Time.deltaTime; //non-force-based jumping
 				GetComponent<Rigidbody2D>().AddForce(new Vector2(0,jumpSpeed), ForceMode2D.Impulse);
 				grounded = false;
+				Debug.Log("Grounded is now false");
 			}
          }
          if (Input.GetKey(KeyCode.DownArrow))
@@ -70,9 +72,10 @@ public class movePlayer : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D hit)
 	{
-    	if (hit.gameObject.tag=="terrain" || hit.gameObject.tag=="platform")
+    	//if (hit.gameObject.tag=="terrain" || hit.gameObject.tag=="platform")
+		if (hit.gameObject.tag=="platform")
 		{
-			//Debug.Log("Hit ground");
+			Debug.Log("Hit ground");
         	grounded=true;
 		}
 		else if (hit.gameObject.tag=="collapse"){
@@ -81,14 +84,16 @@ public class movePlayer : MonoBehaviour {
 			//Destroy(hit.transform.parent.gameObject);
 		}
 	}
-	void OnCollisionExit2D(Collision2D hit)
+/* 	void OnCollisionExit2D(Collision2D hit)
 	{
-		if (hit.gameObject.tag=="terrain" || hit.gameObject.tag=="platform")
+		//if (hit.gameObject.tag=="terrain" || hit.gameObject.tag=="platform")
+
+		if (hit.gameObject.tag=="platform")
 		{
-			//Debug.Log("Off ground");
+			Debug.Log("Off ground");
 			grounded=false;
 		}
-	}
+	} */
 
 	void OnTriggerEnter2D(Collider2D triggeredCollider)
 	{
