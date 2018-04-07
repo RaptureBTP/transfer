@@ -9,6 +9,8 @@ public class movePlayer : MonoBehaviour {
 	public float jumpSpeed;
 
 	public static float currentRoom = 2.1f;
+	
+	public static float previousRoom;
 
 	private bool grounded = true;
 
@@ -31,11 +33,11 @@ public class movePlayer : MonoBehaviour {
          {
 			if(grounded == true)
 			{
-				Debug.Log("Grounded is true. Up Arrow pressed. Jumping now.");
+				//Debug.Log("Grounded is true. Up Arrow pressed. Jumping now.");
 				//transform.position += Vector3.up * jumpSpeed * Time.deltaTime; //non-force-based jumping
 				GetComponent<Rigidbody2D>().AddForce(new Vector2(0,jumpSpeed), ForceMode2D.Impulse);
 				grounded = false;
-				Debug.Log("Grounded is now false");
+				//Debug.Log("Grounded is now false");
 			}
          }
 		 else if (Input.GetKey(KeyCode.LeftArrow))
@@ -77,7 +79,7 @@ public class movePlayer : MonoBehaviour {
 		{
 			//Debug.Log("Hit ground");
         	grounded=true;
-			Debug.Log("Grounded is now true.");
+			//Debug.Log("Grounded is now true.");
 		}
 		else if (hit.gameObject.tag=="collapse"){
 			//Debug.Log("Hit collapse collider");

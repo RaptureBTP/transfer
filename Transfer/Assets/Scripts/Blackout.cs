@@ -9,7 +9,7 @@ public class Blackout : MonoBehaviour {
 
 	//private Transform[] blackouts;
 	
-	public List<KeyValuePair<double, string>> blackoutLocations = new List<KeyValuePair<double, string>>();
+	public static List<KeyValuePair<double, string>> blackoutLocations = new List<KeyValuePair<double, string>>();
 	
 	public GameObject blackoutScreen;
 	
