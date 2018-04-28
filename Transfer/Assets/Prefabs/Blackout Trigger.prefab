@@ -20,8 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4767070666558036}
   - component: {fileID: 212639795633321142}
-  - component: {fileID: 61689157828525338}
   - component: {fileID: 114194774884207496}
+  - component: {fileID: 60781442799257734}
   m_Layer: 0
   m_Name: Blackout Trigger
   m_TagString: terrain
@@ -36,14 +36,14 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1626228110939252}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.562, y: -5.18, z: -1.1699219}
-  m_LocalScale: {x: 0.5566305, y: 0.049882397, z: 1}
+  m_LocalPosition: {x: -0.06, y: 0.034, z: -1.1699219}
+  m_LocalScale: {x: 1.5590065, y: 1.2568902, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61689157828525338
-BoxCollider2D:
+--- !u!60 &60781442799257734
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -64,9 +64,13 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.0001, y: 0.0001}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -4, y: 4}
+      - {x: -4, y: -4}
+      - {x: 0.038422585, y: -4.086292}
+      - {x: 2.2815537, y: -3.4557858}
+      - {x: 4, y: 4}
 --- !u!114 &114194774884207496
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -78,9 +82,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e01dbe28c86e5c4c88d03e9b8f7f693, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blackoutSpace: {fileID: 1418698871349694, guid: 81360b744fb851e40a0e8d1a80cea29e,
+  blackoutSpace: {fileID: 1217095373483966, guid: 423ffbc370c29ad4687cc75644b8dffa,
     type: 2}
-  minimumDistance: 5
+  roomNum: 2.1
+  prevRoomTransform: 
 --- !u!212 &212639795633321142
 SpriteRenderer:
   m_ObjectHideFlags: 1

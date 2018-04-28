@@ -44,6 +44,7 @@ public class lightRoom : MonoBehaviour {
 				}
 				else if(Convert.ToSingle(location.Key) == movePlayer.currentRoom)
 				{
+					Debug.Log("Found new blackout transform values.");
 					newBlackoutTransformValues = location.Value.Split(',');
 				}
 			}
