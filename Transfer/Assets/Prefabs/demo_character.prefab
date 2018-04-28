@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1305515969235096}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.1, y: -13.61, z: 0}
+  m_LocalPosition: {x: 0.19, y: -13.61, z: 0}
   m_LocalScale: {x: 0.72, y: 0.48, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -55,10 +55,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1.2
+  m_Mass: 1.1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3.2
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -89,8 +89,8 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 0.049999997, y: -1.27}
-      - {x: 0.11, y: -1.35}
-      - {x: 0.17999999, y: -1.3399999}
+      - {x: 0.10803835, y: -1.3911924}
+      - {x: 0.21923164, y: -1.3900201}
       - {x: 0.25, y: -1.29}
       - {x: 0.19, y: -1.01}
       - {x: 0.08, y: -0.7}
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0945be380d365d4d92b2f32f1598ee2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blackoutScreen: {fileID: 1418698871349694, guid: 81360b744fb851e40a0e8d1a80cea29e,
+  blackoutScreen: {fileID: 1217095373483966, guid: 423ffbc370c29ad4687cc75644b8dffa,
     type: 2}
 --- !u!114 &114987197806282390
 MonoBehaviour:
@@ -183,8 +183,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 126b0c6d372f81b4a9f1824f31524add, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2.9
-  jumpSpeed: 7
+  speed: 5
+  jumpSpeed: 11
   lastDir: left
   fireball: {fileID: 1014133259345072, guid: e1b50eacdeb9ba44ab5200de5b53aa5f, type: 2}
   ownBoxCollider: {fileID: 0}

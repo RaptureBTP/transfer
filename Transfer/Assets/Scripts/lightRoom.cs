@@ -27,46 +27,55 @@ public class lightRoom : MonoBehaviour {
 		
 	}
 
-	void OnTriggerEnter2D(Collider2D other){
+	void OnTriggerEnter2D(Collider2D other)
+	{
 		if(other.tag == "Player")
 		{
 			Debug.Log("Player collided");
+			Debug.Log("Player current room before changing: " + movePlayer.currentRoom);
+			Debug.Log("Player previous room before changing: " + movePlayer.previousRoom);
 			movePlayer.previousRoom = movePlayer.currentRoom; //save current player room as the previous room
 			movePlayer.currentRoom = roomNum; //update current room for this specific room.
+			Debug.Log("New Player Current Room: " + movePlayer.currentRoom);
+			Debug.Log("New Player Previous Room: " + movePlayer.previousRoom);
 			
-			//get the transform of previous room
-			foreach(var location in Blackout.blackoutLocations)
-			{
-				if(Convert.ToSingle(location.Key) == movePlayer.previousRoom) //compare the keyvalue's key to the previous room number
+				foreach(var location in Blackout.blackoutLocations)//get the transform of previous room
 				{
-					Debug.Log("Found match");
-					transformValues = location.Value.Split(',');
-				}
-				else if(Convert.ToSingle(location.Key) == movePlayer.currentRoom)
-				{
-					Debug.Log("Found new blackout transform values.");
-					newBlackoutTransformValues = location.Value.Split(',');
-				}
-			}
-			
-			//get all the blackouts
-			lightRoom.FindBlackouts();
-			
-			//go through each blackout
- 			for (int i = 0; i < lightRoom.roomBlackouts.Length; ++i)
-			{
-				if(roomBlackouts[i] != null){
-					Debug.Log(roomBlackouts[i].transform.position);
-					if(roomBlackouts[i].transform.position.x == Convert.ToSingle(transformValues[0]) && roomBlackouts[i].transform.position.y == Convert.ToSingle(transformValues[1])) //compare its transform to transform of previous rooms blackout
+					if(Convert.ToSingle(location.Key) == movePlayer.currentRoom) //compare the keyvalue's key to the previous room number
 					{
-						Debug.Log("Found position match.");
-						Destroy(roomBlackouts[i]); //destroy previous rooms blackout
+						//Debug.Log("Found previous room transform match");
+						transformValues = location.Value.Split(',');
+						//Debug.Log("Previous room transform: " + transformValues[0] + " " + transformValues[1]);
+					}
+					else if(Convert.ToSingle(location.Key) == movePlayer.previousRoom)
+					{
+						//Debug.Log("Found new blackout transform values.");
+						newBlackoutTransformValues = location.Value.Split(',');
+						//Debug.Log("New room blackout transform: " +newBlackoutTransformValues[0] + " " + newBlackoutTransformValues[1]);
+
 					}
 				}
-			}
-			
-			Instantiate(blackoutSpace, new Vector3(Convert.ToSingle(newBlackoutTransformValues[0]), Convert.ToSingle(newBlackoutTransformValues[1]), 0), transform.rotation);
 				
+				//get all the blackouts
+				lightRoom.FindBlackouts();
+				
+				//go through each blackout
+				for (int i = 0; i < lightRoom.roomBlackouts.Length; ++i)
+				{
+					if(roomBlackouts[i] != null){
+						//Debug.Log(roomBlackouts[i].transform.position);
+						if(roomBlackouts[i].transform.position.x == Convert.ToSingle(transformValues[0]) && roomBlackouts[i].transform.position.y == Convert.ToSingle(transformValues[1])) //compare its transform to transform of previous rooms blackout
+						{
+							//Debug.Log("Found position match. Destroying blackout and location: " + transformValues[0] + " " + transformValues[1]);
+							//Destroy(roomBlackouts[i]); //destroy previous rooms blackout
+						}
+					}
+				}
+				if(movePlayer.currentRoom != movePlayer.previousRoom)
+				{
+					//Debug.Log("Instantiating new blackout in previous room, location: " + newBlackoutTransformValues[0] + " " + newBlackoutTransformValues[1]);
+					Instantiate(blackoutSpace, new Vector3(Convert.ToSingle(newBlackoutTransformValues[0]), Convert.ToSingle(newBlackoutTransformValues[1]), 0), transform.rotation);
+				}
 		/*Debug.Log("Collided between rooms");
 		Debug.Log(movePlayer.currentRoom); //log out the players current room i.e. the room they just left
 		

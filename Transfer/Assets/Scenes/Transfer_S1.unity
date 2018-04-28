@@ -674,7 +674,7 @@ Prefab:
     - target: {fileID: 114293477837364926, guid: 6edbef00e873ef141b4348f02f03c229,
         type: 2}
       propertyPath: roomNum
-      value: 2.2
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 60031696849610454, guid: 6edbef00e873ef141b4348f02f03c229,
         type: 2}
@@ -1063,12 +1063,12 @@ Prefab:
     - target: {fileID: 60031696849610454, guid: 6edbef00e873ef141b4348f02f03c229,
         type: 2}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].x
-      value: 0.048451163
+      value: -0.015905086
       objectReference: {fileID: 0}
     - target: {fileID: 60031696849610454, guid: 6edbef00e873ef141b4348f02f03c229,
         type: 2}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].y
-      value: -4.433189
+      value: -4.2768016
       objectReference: {fileID: 0}
     - target: {fileID: 60031696849610454, guid: 6edbef00e873ef141b4348f02f03c229,
         type: 2}
@@ -1109,6 +1109,11 @@ Prefab:
         type: 2}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[5].y
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114293477837364926, guid: 6edbef00e873ef141b4348f02f03c229,
+        type: 2}
+      propertyPath: roomNum
+      value: 2.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6edbef00e873ef141b4348f02f03c229, type: 2}
@@ -1572,52 +1577,6 @@ Prefab:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 50170973894986600, guid: 9644b89ca9930d04ab661e6ec399f330,
-        type: 2}
-      propertyPath: m_GravityScale
-      value: 3.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114987197806282390, guid: 9644b89ca9930d04ab661e6ec399f330,
-        type: 2}
-      propertyPath: jumpSpeed
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 114987197806282390, guid: 9644b89ca9930d04ab661e6ec399f330,
-        type: 2}
-      propertyPath: speed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 50170973894986600, guid: 9644b89ca9930d04ab661e6ec399f330,
-        type: 2}
-      propertyPath: m_Mass
-      value: 1.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 60353085912448976, guid: 9644b89ca9930d04ab661e6ec399f330,
-        type: 2}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].x
-      value: 0.10803835
-      objectReference: {fileID: 0}
-    - target: {fileID: 60353085912448976, guid: 9644b89ca9930d04ab661e6ec399f330,
-        type: 2}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].y
-      value: -1.3911924
-      objectReference: {fileID: 0}
-    - target: {fileID: 60353085912448976, guid: 9644b89ca9930d04ab661e6ec399f330,
-        type: 2}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].x
-      value: 0.21923164
-      objectReference: {fileID: 0}
-    - target: {fileID: 60353085912448976, guid: 9644b89ca9930d04ab661e6ec399f330,
-        type: 2}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].y
-      value: -1.3900201
-      objectReference: {fileID: 0}
-    - target: {fileID: 114053412890955716, guid: 9644b89ca9930d04ab661e6ec399f330,
-        type: 2}
-      propertyPath: blackoutScreen
-      value: 
-      objectReference: {fileID: 1217095373483966, guid: 423ffbc370c29ad4687cc75644b8dffa,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9644b89ca9930d04ab661e6ec399f330, type: 2}
   m_IsPrefabParent: 0

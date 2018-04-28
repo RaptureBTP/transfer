@@ -19,14 +19,15 @@ public class Blackout : MonoBehaviour {
 	{
 		//13.35 apart on X axis, 10.025 apart on the Y axis
 		blackoutLocations.Add(new KeyValuePair<double, string>(1.1, "-13.35,-9.9"));
-		blackoutLocations.Add(new KeyValuePair<double, string>(1.2, "-13.35,0.125"));
-		blackoutLocations.Add(new KeyValuePair<double, string>(2.1, "0,-9.9"));
+		blackoutLocations.Add(new KeyValuePair<double, string>(2.1, "-13.35,0.125"));
+		blackoutLocations.Add(new KeyValuePair<double, string>(1.2, "0,-9.9"));
 		blackoutLocations.Add(new KeyValuePair<double, string>(2.2, "0,0.125"));
-		blackoutLocations.Add(new KeyValuePair<double, string>(3.1, "13.35,-9.9"));
-		blackoutLocations.Add(new KeyValuePair<double, string>(3.2, "13.35,0.125"));
+		blackoutLocations.Add(new KeyValuePair<double, string>(1.3, "13.35,-9.9"));
+		blackoutLocations.Add(new KeyValuePair<double, string>(2.3, "13.35,0.125"));
 		
 		foreach(var location in blackoutLocations)
 		{
+			//Debug.Log(location.Key + location.Value);
 			transformValues = location.Value.Split(',');
 			
 			Instantiate(blackoutScreen, new Vector3(Convert.ToSingle(transformValues[0]),Convert.ToSingle(transformValues[1]),0), transform.rotation);
